@@ -6,35 +6,35 @@ import { ThemeProvider } from '@mui/material';
 import theme from '@/theme';
 
 const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto'
+	weight: ['300', '400', '500', '700'],
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-roboto'
 });
 
 export const metadata: Metadata = {
-  title: 'Gecoin wallet app',
-  description: 'Manage your GEC',
+	title: 'Gecoin wallet app',
+	description: 'Manage your GEC',
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang='en'>
-      <body
-        className={`${roboto.variable} antialiased`}
-      >
-        <AppRouterCacheProvider
-         options={{ key: 'css' }}
-        >
-          <ThemeProvider theme={theme}>
-            {children}
-          </ThemeProvider>
-        </AppRouterCacheProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang='en'>
+			<body
+				className={`${roboto.variable} antialiased`}
+			>
+				<AppRouterCacheProvider
+					options={{ key: 'css' }}
+				>
+					<ThemeProvider theme={theme}>
+						{children}
+					</ThemeProvider>
+				</AppRouterCacheProvider>
+			</body>
+		</html>
+	);
 }
